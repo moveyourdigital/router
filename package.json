@@ -1,0 +1,67 @@
+{
+  "name": "@moveyourdigital/router",
+  "version": "0.1.1",
+  "description": "Allows to match any part of the HTTP request message",
+  "type": "module",
+  "source": "src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.modern.js"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "require": "./dist/node.cjs",
+      "default": "./dist/node.modern.js"
+    }
+  },
+  "unpkg": "./dist/index.umd.js",
+  "module": "./dist/index.esm.js",
+  "main": "./dist/index.cjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "microbundle watch",
+    "build": "microbundle src/{index,node}.ts",
+    "lint": "eslint src",
+    "test": "esrun src/index.test.ts"
+  },
+  "keywords": [
+    "router",
+    "regexp",
+    "regex",
+    "web api",
+    "routing",
+    "http",
+    "https",
+    "server",
+    "node.js",
+    "edge"
+  ],
+  "author": "Vitor Carvalho <lightningspirit@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/@moveyourdigital/router",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/@moveyourdigital/router.git"
+  },
+  "bugs": {
+    "url": "https://github.com/@moveyourdigital/router/issues"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.7.0",
+    "@types/node": "^20.14.2",
+    "eslint": "^9.7.0",
+    "esrun": "^3.2.26",
+    "globals": "^15.8.0",
+    "microbundle": "^0.15.1",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^8.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "funtastic": "^0.1.0"
+  }
+}
