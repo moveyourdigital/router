@@ -7,8 +7,8 @@ const router = new Router()
   .add(/.*/, logger(), throwable(), notFound())
   .add(/^POST/, () => new Response())
   .add(/^GET \/private\s/, auth({ secret: 'test' }), () => new Response())
-  .add(/^GET \/\s/, () => {
-    return Response.json('Hello world!', {
+  .add(/^GET \/(.*\n)+user-agent: (?<agent>.*)/i, (req, ctx) => {
+    return Response.json(`Hello ${ctx.params?.get('agent')}`, {
       status: 201
     })
   })
